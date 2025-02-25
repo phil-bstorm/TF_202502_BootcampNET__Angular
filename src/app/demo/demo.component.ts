@@ -7,5 +7,5 @@ import {Component, ViewEncapsulation} from '@angular/core';
   styleUrl: './demo.component.scss'
 })
 export class DemoComponent {
-
+  monText = "Salut!"
 }

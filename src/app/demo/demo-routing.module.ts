@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: "hello-world",
     component: HelloWorldComponent
+  },
+  {
+    path: "binding",
+    loadChildren: () => import("./binding/binding.module").then(m => m.BindingModule)
   }
 ];
 
