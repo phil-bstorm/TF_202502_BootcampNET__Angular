@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DemoComponent} from './demo.component';
 import {HelloWorldComponent} from './components/hello-world/hello-world.component';
+import {BindingComponent} from './binding/binding.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: "binding",
+    component: BindingComponent,
     loadChildren: () => import("./binding/binding.module").then(m => m.BindingModule)
   }
 ];
