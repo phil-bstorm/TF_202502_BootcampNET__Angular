@@ -1,0 +1,55 @@
+<h3>structural-directive </h3>
+
+<h4>&#64;if (anciennement *ngIf)</h4>
+<button (click)="rendreLeTextVisible()">Rendre le texte visible! 🎉</button>
+@if(textVisible){
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, in sint ut iste iure culpa vitae architecto? Quo
+    necessitatibus tenetur dolorem provident esse officia iusto, facilis autem aspernatur, quidem repellat.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, in sint ut iste iure culpa vitae architecto? Quo
+    necessitatibus tenetur dolorem provident esse officia iusto, facilis autem aspernatur, quidem repellat.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, in sint ut iste iure culpa vitae architecto? Quo
+    necessitatibus tenetur dolorem provident esse officia iusto, facilis autem aspernatur, quidem repellat.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, in sint ut iste iure culpa vitae architecto? Quo
+    necessitatibus tenetur dolorem provident esse officia iusto, facilis autem aspernatur, quidem repellat.
+  </p>
+}
+
+<div *ngIf="textVisible">
+  <p>
+    à l'ancienne!
+  </p>
+  <p>
+    à l'ancienne!
+  </p>
+</div>
+
+<h4>&#64;for (anciennement (*ngFor)</h4>
+<ul>
+@for(personnage of personnages; track $index){
+  <li>{{$index}} - {{personnage.nom}} {{personnage.prenom}}</li>
+}
+
+  <li>à l'ancienne</li>
+  <li *ngFor="let personnage of personnages">
+  <li>{{personnage.nom}} {{personnage.prenom}}</li>
+</ul>
+
+<h4>&#64;Switch (anciennement (*ngSwitch))</h4>
+@switch (role){
+  @case ("beginner"){
+    <p>Il va falloir évoluer!</p>
+  }
+  @case ("Veteran"){
+    <p>Respect!</p>
+  }
+  @default {
+    <p>Tu ne rentres pas dans les cases!</p>
+  }
+}

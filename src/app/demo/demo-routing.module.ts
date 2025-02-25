@@ -3,12 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {DemoComponent} from './demo.component';
 import {HelloWorldComponent} from './components/hello-world/hello-world.component';
 import {BindingComponent} from './binding/binding.component';
+import {DirectiveComponent} from './directive/directive.component';
 
 const routes: Routes = [
-  {
-    path: "",
-    component: DemoComponent
-  },
   {
     path: "hello-world",
     component: HelloWorldComponent
@@ -17,6 +14,11 @@ const routes: Routes = [
     path: "binding",
     component: BindingComponent,
     loadChildren: () => import("./binding/binding.module").then(m => m.BindingModule)
+  },
+  {
+    path: "directive",
+    component: DirectiveComponent,
+    loadChildren: () => import("./directive/directive.module").then(m => m.DirectiveModule)
   }
 ];
 

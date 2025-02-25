@@ -1,0 +1,6 @@
+<h2>Super chronomètre</h2>
+
+<button (click)="start()" [disabled]="intervalIndex!=null">Start!</button> -
+<button (click)="stop()" [disabled]="intervalIndex==null">Stop!</button> -
+<button (click)="reset()">Reset!</button>
+Seconde(s) passée(s): {{ compteur | time }}.

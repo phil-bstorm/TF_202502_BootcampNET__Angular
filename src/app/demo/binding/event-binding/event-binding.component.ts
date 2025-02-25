@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './event-binding.component.scss'
 })
 export class EventBindingComponent {
-
+  afficherPopup() {
+    console.log('Tu as cliqué sur le bouton?!'); // Affiche dans la console du navigateur
+  }
 }

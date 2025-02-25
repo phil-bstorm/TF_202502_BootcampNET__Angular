@@ -19,7 +19,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     BindingRoutingModule,
-    FormsModule,
+    FormsModule, // nécessaire pour le two-way binding [(ngModel)]
   ]
 })
 export class BindingModule { }

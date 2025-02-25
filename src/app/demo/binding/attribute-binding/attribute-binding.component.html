@@ -1,1 +1,18 @@
-<p>attribute-binding works!</p>
+<p>attribute-binding!</p>
+
+On joue avec la propriété disabled des boutons!
+<br>
+
+<button
+  (click)="onClickButton1()"
+  [disabled]="bouton1IsDisabled"
+> Je suis actif!
+</button>
+
+<br>
+
+<button
+  (click)="onClickButton2()"
+  [disabled]="bouton2IsDisabled"
+> Je ne suis pas actif!
+</button>
