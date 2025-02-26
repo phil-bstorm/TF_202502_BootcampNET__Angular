@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {ItemQuantity} from '../../models/ItemQuantity.model';
 
 @Component({
   selector: 'app-add-shopping-item-service',
@@ -7,14 +8,19 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrl: './add-shopping-item-service.component.scss'
 })
 export class AddShoppingItemServiceComponent {
-  @Output() ajouterItem: EventEmitter<string> = new EventEmitter<string>();
+  @Output() ajouterItem: EventEmitter<ItemQuantity> = new EventEmitter<ItemQuantity>();
 
   itemName: string = "";
+  quantity: number = 0;
 
-  onAjouterBtnClick(){
-    if(this.itemName !== "") {
-      this.ajouterItem.emit(this.itemName);
+  onAjouterBtnClick() {
+    if (this.itemName !== "") {
+      this.ajouterItem.emit({
+        name: this.itemName,
+        quantity: this.quantity
+      });
       this.itemName = "";
+      this.quantity = 0;
     }
   }
 }

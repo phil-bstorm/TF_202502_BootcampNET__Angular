@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ItemQuantity} from '../../models/ItemQuantity.model';
 
 @Component({
   selector: 'app-list-shopping-service',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrl: './list-shopping-service.component.scss'
 })
 export class ListShoppingServiceComponent {
-    @Input() listOfItems: string[] = [];
+    @Input() listOfItems: ItemQuantity[] = [];
 
     @Output() supprimerIndex: EventEmitter<number> = new EventEmitter<number>();
 

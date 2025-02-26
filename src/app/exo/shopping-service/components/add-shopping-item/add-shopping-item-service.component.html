@@ -1,2 +1,10 @@
-<label for="itemname">item: </label><input id="itemname" type="text" [(ngModel)]="itemName">
+<div>
+  <label for="itemname">item: </label>
+  <input
+    id="itemname" type="text" [(ngModel)]="itemName">
+</div>
+<div>
+  <label for="itemquantity">quantity:</label>
+  <input id="itemquantity" type="number" [(ngModel)]="quantity">
+</div>
 <button (click)="onAjouterBtnClick()">Ajouter à la liste</button>

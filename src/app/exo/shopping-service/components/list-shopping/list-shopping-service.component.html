@@ -1,5 +1,7 @@
 <ul>
-  @for (item of listOfItems; track $index){
-    <li>{{ item }} <button (click)="onSupprimerBtnClick($index)">⛔</button></li>
+  @for (item of listOfItems; track $index) {
+    <li>{{ item.name }} {{ item.quantity }}
+      <button (click)="onSupprimerBtnClick($index)">⛔</button>
+    </li>
   }
 </ul>

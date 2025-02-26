@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {ShopManagerService} from './services/shop-manager.service';
+import {ItemQuantity} from './models/ItemQuantity.model';
 
 @Component({
   selector: 'app-shopping-service',
@@ -7,13 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-service.component.scss'
 })
 export class ShoppingServiceComponent {
-  shoppingList: string[] = ["oeufs", "chocolat"];
+  private _shopMS: ShopManagerService = inject(ShopManagerService);
+  shoppingList: ItemQuantity[] = this._shopMS.shoppingList;
 
-  ajouterALaList(item: string){
-    this.shoppingList.push(item);
+  ajouterALaList(item: ItemQuantity){
+    this._shopMS.ajouterALaList(item);
+    this.shoppingList = this._shopMS.shoppingList;
   }
 
   supprimerItemA(index: number){
-    this.shoppingList.splice(index, 1);
+    this._shopMS.supprimerItemA(index);
+    this.shoppingList = this._shopMS.shoppingList;
   }
 }
