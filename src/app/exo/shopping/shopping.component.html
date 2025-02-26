@@ -1,5 +1,5 @@
 <p>shopping works!</p>
 
-<!-- composant d'ajout -->
+<app-add-shopping-item (ajouterItem)="ajouterALaList($event)"></app-add-shopping-item>
 
-<!-- composant de listing -->
+<app-list-shopping  [listOfItems]="shoppingList" (supprimerIndex)="supprimerItemA($event)"></app-list-shopping>

@@ -6,18 +6,24 @@ import { ExoComponent } from './exo.component';
 import { ChronometreComponent } from './chronometre/chronometre.component';
 import {SharedModule} from '../shared/shared.module';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { ListShoppingComponent } from './shopping/components/list-shopping/list-shopping.component';
+import { AddShoppingItemComponent } from './shopping/components/add-shopping-item/add-shopping-item.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ExoComponent,
     ChronometreComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    ListShoppingComponent,
+    AddShoppingItemComponent
   ],
   imports: [
     CommonModule,
     ExoRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class ExoModule { }

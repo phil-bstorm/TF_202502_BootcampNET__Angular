@@ -1,0 +1,5 @@
+<ul>
+  @for (item of listOfItems; track $index){
+    <li>{{ item }} <button (click)="onSupprimerBtnClick($index)">⛔</button></li>
+  }
+</ul>
