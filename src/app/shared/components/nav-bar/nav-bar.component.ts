@@ -19,6 +19,11 @@ export class NavBarComponent {
       title: 'Demo',
       children: [
         {
+          title: 'Composant',
+          url: '/demo/',
+          isVisible: true
+        },
+        {
           title: 'Binding',
           url: '/demo/binding',
           isVisible: true
@@ -28,6 +33,11 @@ export class NavBarComponent {
           title: 'Pipes',
           url: '/demo/pipes',
           isVisible: false
+        },
+        {
+          title: 'Directives',
+          url: '/demo/directive',
+          isVisible: true
         },
         {
           title: 'input & ouput',
@@ -40,6 +50,11 @@ export class NavBarComponent {
     {
       title: 'Exo',
       children: [
+        {
+          title: "Chronometre",
+          url: "/exo/chrono",
+          isVisible: true
+        },
         {
           title: "Shopping",
           url: "/exo/shopping",

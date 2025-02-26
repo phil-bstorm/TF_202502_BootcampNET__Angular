@@ -7,6 +7,10 @@ import {BindingComponent} from './binding.component';
 
 const routes: Routes = [
   {
+    path: "",
+    component: BindingComponent
+  },
+  {
     path: "property",
     component: PropertyBindingComponent
   },

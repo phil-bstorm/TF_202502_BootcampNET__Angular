@@ -8,22 +8,23 @@ import {InputOutputComponent} from './input-output/input-output.component';
 
 const routes: Routes = [
   {
+    path: "",
+    component: DemoComponent
+  },
+  {
     path: "hello-world",
     component: HelloWorldComponent
   },
   {
     path: "binding",
-    component: BindingComponent,
     loadChildren: () => import("./binding/binding.module").then(m => m.BindingModule)
   },
   {
     path: "directive",
-    component: DirectiveComponent,
     loadChildren: () => import("./directive/directive.module").then(m => m.DirectiveModule)
   },
   {
     path: "input-output",
-    component: InputOutputComponent,
     loadChildren: () => import("./input-output/input-output-routing.module").then(m => m.InputOutputRoutingModule)
   }
 ];
