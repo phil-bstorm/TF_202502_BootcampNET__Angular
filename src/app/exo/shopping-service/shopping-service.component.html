@@ -1,0 +1,5 @@
+<p>shopping works!</p>
+
+<app-add-shopping-item-service (ajouterItem)="ajouterALaList($event)"></app-add-shopping-item-service>
+
+<app-list-shopping-service  [listOfItems]="shoppingList" (supprimerIndex)="supprimerItemA($event)"></app-list-shopping-service>
