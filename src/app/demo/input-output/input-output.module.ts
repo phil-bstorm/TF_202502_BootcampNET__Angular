@@ -15,6 +15,7 @@ import { InputEnfantComponent } from './input/input-enfant/input-enfant.componen
     InputOutputRoutingModule,
   ],
   exports: [
+    InputComponent,
     InputEnfantComponent
   ]
 })

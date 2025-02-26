@@ -5,6 +5,9 @@ import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
 import { HelloWorldComponent } from './components/hello-world/hello-world.component';
 import { InputOutputComponent } from './input-output/input-output.component';
+import {InputOutputModule} from './input-output/input-output.module';
+import {BindingModule} from './binding/binding.module';
+import {DirectiveModule} from './directive/directive.module';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { InputOutputComponent } from './input-output/input-output.component';
   ],
   imports: [
     CommonModule,
-    DemoRoutingModule
+    DemoRoutingModule,
+    BindingModule,
+    DirectiveModule,
+    InputOutputModule
   ],
 })
 export class DemoModule { }
