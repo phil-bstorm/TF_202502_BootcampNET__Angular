@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: "input-output",
     loadChildren: () => import("./input-output/input-output-routing.module").then(m => m.InputOutputRoutingModule)
+  },
+  {
+    path: 'service',
+    loadChildren: () => import('./service/service.module').then(m => m.ServiceModule)
   }
 ];
 

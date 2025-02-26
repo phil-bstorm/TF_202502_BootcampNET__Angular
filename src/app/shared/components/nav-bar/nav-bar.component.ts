@@ -43,6 +43,11 @@ export class NavBarComponent {
           title: 'input & ouput',
           url: '/demo/input-output',
           isVisible: true
+        },
+        {
+          title: 'Service & injection',
+          url: '/demo/service',
+          isVisible: true
         }
       ],
       isVisible: true

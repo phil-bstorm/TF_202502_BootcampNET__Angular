@@ -8,6 +8,7 @@ import { InputOutputComponent } from './input-output/input-output.component';
 import {InputOutputModule} from './input-output/input-output.module';
 import {BindingModule} from './binding/binding.module';
 import {DirectiveModule} from './directive/directive.module';
+import {ServiceModule} from './service/service.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {DirectiveModule} from './directive/directive.module';
     DemoRoutingModule,
     BindingModule,
     DirectiveModule,
-    InputOutputModule
+    InputOutputModule,
+    ServiceModule
   ],
 })
 export class DemoModule { }
