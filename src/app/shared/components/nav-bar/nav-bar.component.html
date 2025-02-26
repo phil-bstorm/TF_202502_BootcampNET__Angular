@@ -19,15 +19,17 @@
         }
         <!--    Un composant pour regrouper le "if else" pour ne pas dupliquer le code! => @Input & @Ouput-->
         @if (link.children.length) {
-          @for (subLink of link.children; track $index) {
-            @if (subLink.isVisible) {
-              @if (subLink.url) {
-                <li><a routerLink="{{subLink.url}}">{{ subLink.title }}</a></li>
-              } @else {
-                <li>{{ subLink.title }}</li>
+          <ul>
+            @for (subLink of link.children; track $index) {
+              @if (subLink.isVisible) {
+                @if (subLink.url) {
+                  <li><a routerLink="{{subLink.url}}">{{ subLink.title }}</a></li>
+                } @else {
+                  <li>{{ subLink.title }}</li>
+                }
               }
             }
-          }
+          </ul>
         }
       }
     }
