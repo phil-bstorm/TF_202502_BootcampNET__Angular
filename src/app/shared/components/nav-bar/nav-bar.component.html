@@ -2,9 +2,34 @@
   <h1>Demo</h1>
 </header>
 <nav>
+  <!--  Ancienne version avant Links-->
+  <!--  <ul>-->
+  <!--    <li><a routerLink="/">Home</a></li>-->
+  <!--    <li><a routerLink="/demo">Demo</a></li>-->
+  <!--    <li><a routerLink="/exo">Exo</a></li>-->
+  <!--  </ul>-->
+
   <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/demo">Demo</a></li>
-    <li><a routerLink="/exo">Exo</a></li>
+    @for (link of links; track $index) {
+      @if (link.isVisible) {
+        @if (link.url) {
+          <li><a routerLink="{{link.url}}">{{ link.title }}</a></li>
+        } @else {
+          <li>{{ link.title }}</li>
+        }
+        <!--    Un composant pour regrouper le "if else" pour ne pas dupliquer le code! => @Input & @Ouput-->
+        @if (link.children.length) {
+          @for (subLink of link.children; track $index) {
+            @if (subLink.isVisible) {
+              @if (subLink.url) {
+                <li><a routerLink="{{subLink.url}}">{{ subLink.title }}</a></li>
+              } @else {
+                <li>{{ subLink.title }}</li>
+              }
+            }
+          }
+        }
+      }
+    }
   </ul>
 </nav>

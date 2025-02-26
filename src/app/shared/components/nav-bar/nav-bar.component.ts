@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Link} from './models/Link.model';
 
 @Component({
@@ -21,15 +21,18 @@ export class NavBarComponent {
         {
           title: 'Binding',
           url: '/demo/binding',
-          children: [],
           isVisible: true
         },
         {
-          // pipe ne doit pas apparaitre dans la navigation
+          // pipe ne doit pas apparaitre dans la navigation car isVisible est à false
           title: 'Pipes',
           url: '/demo/pipes',
-          children: [],
           isVisible: false
+        },
+        {
+          title: 'input & ouput',
+          url: '/demo/input-output',
+          isVisible: true
         }
       ],
       isVisible: true
