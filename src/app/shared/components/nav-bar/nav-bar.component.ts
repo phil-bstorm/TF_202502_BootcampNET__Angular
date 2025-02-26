@@ -36,6 +36,17 @@ export class NavBarComponent {
         }
       ],
       isVisible: true
+    },
+    {
+      title: 'Exo',
+      children: [
+        {
+          title: "Shopping",
+          url: "/exo/shopping",
+          isVisible: true
+        }
+      ],
+      isVisible: true
     }
   ]
 }

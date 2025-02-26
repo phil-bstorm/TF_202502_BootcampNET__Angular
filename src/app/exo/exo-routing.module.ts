@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {ExoComponent} from './exo.component';
 import {ChronometreComponent} from './chronometre/chronometre.component';
+import {ShoppingComponent} from './shopping/shopping.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "chrono",
     component: ChronometreComponent
+  },
+  {
+    path: "shopping",
+    component: ShoppingComponent
   }
 ];
 

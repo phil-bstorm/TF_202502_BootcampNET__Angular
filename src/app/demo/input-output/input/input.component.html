@@ -1,4 +1,12 @@
 <p>Démo sur &#64;Input</p>
 
 <p>J'envoie des données vers l'enfant!</p>
-<app-input-enfant></app-input-enfant>
+<app-input-enfant test="Mon super texte!"
+                  [testObj]="objetPourEnfant"
+                  [divClasses]="enfant1DivClasses"
+></app-input-enfant>
+
+<app-input-enfant test="2eme texte!"
+                  [testObj]="objetPourEnfant2"
+                  [divClasses]="enfant2DivClasses"
+></app-input-enfant>

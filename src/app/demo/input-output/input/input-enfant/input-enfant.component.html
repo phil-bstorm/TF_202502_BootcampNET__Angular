@@ -1,1 +1,11 @@
-<p>input-enfant works!</p>
+<div class="{{divClasses}}">
+    <p>input-enfant works!</p>
+    {{ test }}
+    {{ testObj.title }}
+    {{ testObj.value }}
+    @for (divClass of divClasses; track $index){
+        <p>
+            {{divClass}}
+        </p>
+    }
+</div>
