@@ -4,6 +4,7 @@ import {DemoComponent} from './demo.component';
 import {HelloWorldComponent} from './components/hello-world/hello-world.component';
 import {BindingComponent} from './binding/binding.component';
 import {DirectiveComponent} from './directive/directive.component';
+import {InputOutputComponent} from './input-output/input-output.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
     path: "directive",
     component: DirectiveComponent,
     loadChildren: () => import("./directive/directive.module").then(m => m.DirectiveModule)
+  },
+  {
+    path: "input-output",
+    component: InputOutputComponent,
+    loadChildren: () => import("./input-output/input-output-routing.module").then(m => m.InputOutputRoutingModule)
   }
 ];
 

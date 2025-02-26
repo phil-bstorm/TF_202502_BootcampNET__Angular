@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
 import { HelloWorldComponent } from './components/hello-world/hello-world.component';
+import { InputOutputComponent } from './input-output/input-output.component';
 
 
 @NgModule({
   declarations: [
     DemoComponent,
-    HelloWorldComponent
+    HelloWorldComponent,
+    InputOutputComponent,
   ],
   imports: [
     CommonModule,
