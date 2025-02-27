@@ -8,7 +8,7 @@ import {SharedModule} from '../shared/shared.module';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ListShoppingComponent } from './shopping/components/list-shopping/list-shopping.component';
 import { AddShoppingItemComponent } from './shopping/components/add-shopping-item/add-shopping-item.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ShoppingServiceComponent} from './shopping-service/shopping-service.component';
 import {
   ListShoppingServiceComponent
@@ -16,6 +16,7 @@ import {
 import {
   AddShoppingItemServiceComponent
 } from './shopping-service/components/add-shopping-item/add-shopping-item-service.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 
 @NgModule({
@@ -30,13 +31,15 @@ import {
     /* Exo shopping list avec service */
     ShoppingServiceComponent,
     ListShoppingServiceComponent,
-    AddShoppingItemServiceComponent
+    AddShoppingItemServiceComponent,
+    FormulaireComponent
   ],
   imports: [
     CommonModule,
     ExoRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ExoModule { }

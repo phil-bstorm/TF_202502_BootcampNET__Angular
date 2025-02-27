@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+
+  <label for="nom">Nom</label>
+  <input id="nom" type="text" formControlName="nom">
+
+  <br>
+
+  <label for="prenom">Prenom</label>
+  <input id="prenom" type="text" formControlName="prenom">
+
+  <br>
+
+  <label for="email">Email</label>
+  <input id="email" type="text" formControlName="email">
+
+  <br>
+
+  <label for="password">Mot de passe</label>
+  <input id="password" type="password" formControlName="password">
+
+  <br>
+
+  <button (click)="submit()" >Valider</button>
+
+
+    @if (successMessage)
+    {
+        <p class="success">{{successMessage}}</p>
+    }
+
+    @if (errorMessage)
+    {
+      <p class="error">{{errorMessage}}</p>
+    }
+
+
+</form>

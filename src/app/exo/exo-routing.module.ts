@@ -4,6 +4,7 @@ import {ExoComponent} from './exo.component';
 import {ChronometreComponent} from './chronometre/chronometre.component';
 import {ShoppingComponent} from './shopping/shopping.component';
 import {ShoppingServiceComponent} from './shopping-service/shopping-service.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "shopping-service",
     component: ShoppingServiceComponent
+  },
+  {
+    path : 'formulaire',
+    component : FormulaireComponent
   }
 ];
 

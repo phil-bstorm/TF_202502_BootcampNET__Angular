@@ -74,6 +74,11 @@ export class NavBarComponent {
           title: "Shopping avec service",
           url: "/exo/shopping-service",
           isVisible: true
+        },
+        {
+          title : "Formulaire",
+          url : "/exo/formulaire",
+          isVisible : true
         }
       ],
       isVisible: true

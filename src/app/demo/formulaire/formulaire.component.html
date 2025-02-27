@@ -34,7 +34,7 @@
 
   <br>
 
-  <button (click)="submit()">Valider</button>
+  <button [disabled]="!form.valid" (click)="submit()">Valider</button>
 
   @if (message)
   {
