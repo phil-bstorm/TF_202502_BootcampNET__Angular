@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path : 'formulaire',
     loadChildren : () => import('./formulaire/formulaire.module').then(m => m.FormulaireModule)
+  },
+  {
+    path : 'routing',
+    loadChildren : () => import('./routing/routing.module').then(m => m.RoutingModule),
   }
 ];
 

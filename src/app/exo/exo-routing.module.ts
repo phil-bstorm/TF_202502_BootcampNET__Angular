@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path : 'formulaire',
     component : FormulaireComponent
-  }
+  },
 ];
 
 @NgModule({

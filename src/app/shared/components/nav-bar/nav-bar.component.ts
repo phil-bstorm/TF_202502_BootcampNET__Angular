@@ -53,6 +53,11 @@ export class NavBarComponent {
           title : 'Formulaires',
           url : '/demo/formulaire',
           isVisible : true
+        },
+        {
+          title : "Routing",
+          url : "/demo/routing",
+          isVisible : true
         }
       ],
       isVisible: true
