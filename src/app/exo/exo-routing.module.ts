@@ -27,6 +27,10 @@ const routes: Routes = [
     path : 'formulaire',
     component : FormulaireComponent
   },
+  {
+    path: "crud",
+    loadChildren : () => import("./crud/crud.module").then(m => m.CrudModule)
+  }
 ];
 
 @NgModule({

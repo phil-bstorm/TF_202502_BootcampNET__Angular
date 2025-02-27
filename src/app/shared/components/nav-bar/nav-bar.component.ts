@@ -84,6 +84,11 @@ export class NavBarComponent {
           title : "Formulaire",
           url : "/exo/formulaire",
           isVisible : true
+        },
+        {
+          title : "CRUD",
+          url : "/exo/crud",
+          isVisible : true
         }
       ],
       isVisible: true
