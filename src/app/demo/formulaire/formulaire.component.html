@@ -1,0 +1,44 @@
+<p>formulaire works!</p>
+
+
+<form [formGroup]="form">
+  <label for="titre" >Titre</label> &nbsp;
+  <input id="titre" type="text" formControlName="titre">
+  <br>
+
+  <label for="annee">Annee</label> &nbsp;
+  <input id="annee" type="number" formControlName="annee">
+
+  <br>
+
+  <label for="genre">Genre</label> &nbsp;
+  <select id="genre" formControlName="genre">
+    @for (genre of genreList; track $index)
+    {
+      <option [value]="genre[0]">{{genre[1]}}</option>
+    }
+  </select>
+
+  <br>
+
+  <label for="artistes">Artistes</label> &nbsp;
+  <div id="artistes" formArrayName="artistes">
+    @for (control of getArray().controls; track $index)
+    {
+      <p>{{$index + 1}}</p>
+      <input [formControlName]="$index" >
+      <button (click)="removeControl($index)">Remove</button>
+    }
+  </div>
+  <button (click)="addControl()">Add</button>
+
+  <br>
+
+  <button (click)="submit()">Valider</button>
+
+  @if (message)
+  {
+    <p>{{message}}</p>
+  }
+
+</form>

@@ -48,6 +48,11 @@ export class NavBarComponent {
           title: 'Service & injection',
           url: '/demo/service',
           isVisible: true
+        },
+        {
+          title : 'Formulaires',
+          url : '/demo/formulaire',
+          isVisible : true
         }
       ],
       isVisible: true
