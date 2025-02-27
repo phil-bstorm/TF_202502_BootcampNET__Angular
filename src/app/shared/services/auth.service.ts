@@ -11,4 +11,12 @@ export class AuthService {
     return true;
   }
 
+  isModo(){
+    return false;
+  }
+
+  isHonorable(){
+    return false;
+  }
+
 }
