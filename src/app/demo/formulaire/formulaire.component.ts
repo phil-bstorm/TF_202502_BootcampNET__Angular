@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { genre } from './enums/genre.enum';
+import { artisteValidator } from './validators/artiste.validator';
+import { ConfirmPasswordValidator } from './validators/confirm-password.validator';
 
 @Component({
   selector: 'app-formulaire',
@@ -22,11 +24,13 @@ export class FormulaireComponent {
     let dateActuel : Date = new Date();
 
     this.form = this._formbuilder.group({
-      titre : [null, [Validators.required, Validators.minLength(4)]],
+      titre : [null, [Validators.required, Validators.minLength(5)]],
       annee : [dateActuel.getFullYear(), [Validators.required, Validators.min(1600), Validators.max(dateActuel.getFullYear())]],
       genre : [null , [Validators.required]],
-      artistes : this._formbuilder.array([new FormControl(null, Validators.required)])
-    })
+      artistes : this._formbuilder.array([new FormControl(null, artisteValidator)]),
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required]],
+    }, { validators: [ConfirmPasswordValidator] })
   }
 
   getArray() : FormArray {
@@ -34,7 +38,7 @@ export class FormulaireComponent {
   }
 
   addControl() : void{
-    this.getArray().push(new FormControl(null, Validators.required))
+    this.getArray().push(new FormControl(null, artisteValidator))
   }
 
   removeControl(index : number) : void{

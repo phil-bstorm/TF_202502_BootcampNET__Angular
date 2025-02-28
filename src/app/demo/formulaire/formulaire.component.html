@@ -4,6 +4,13 @@
 <form [formGroup]="form">
   <label for="titre" >Titre</label> &nbsp;
   <input id="titre" type="text" formControlName="titre">
+
+  <div *ngIf="form.controls['titre'].touched && form.controls['titre'].invalid" class="error-control">
+    <span *ngIf="form.controls['titre'].errors">
+      Le champ doit contenir au minimum {{ form.controls['titre'].errors['minlength']['requiredLength'] }} caractères
+    </span>
+  </div>
+
   <br>
 
   <label for="annee">Annee</label> &nbsp;
@@ -28,8 +35,26 @@
       <p>{{$index + 1}}</p>
       <input [formControlName]="$index" >
       <button (click)="removeControl($index)">Remove</button>
+
+      <span *ngIf="control.touched && control.invalid" class="error-control">
+        <div *ngIf="control.errors">
+          {{ control.errors['name'] }}
+        </div>
+      </span>
     }
   </div>
+
+  <label for="password">Mot de passe:</label>
+  <input type="password" formControlName="password">
+
+  <label for="confirmPassword">Répéter le mot de passe:</label>
+  <input type="confirmPassword" formControlName="confirmPassword">
+
+  <div *ngIf="form.controls['confirmPassword'].touched && form.errors">
+    {{ form.errors['name'] }}
+  </div>
+
+
   <button (click)="addControl()">Add</button>
 
   <br>
@@ -40,5 +65,22 @@
   {
     <p>{{message}}</p>
   }
+
+  <h3>Form Control (abstractControl) [états]: </h3>
+  <p *ngIf="form.pristine">Pristine (n'a pas été touché UI)</p>
+  <p *ngIf="form.dirty">Dirty (a été touché UI)</p>
+  <p *ngIf="form.touched">Touched (a pas été touché et perte de focus)</p>
+  <p *ngIf="form.untouched">Untouched (n'a pas été touché et perte de focus)</p>
+  <p *ngIf="form.valid">Valid (est valide)</p>
+  <p *ngIf="form.invalid">Invalid (n'est pas valide)</p>
+
+  <h3>Form Control Inviduel (control) [états]:</h3>
+  <p *ngIf="form.controls['titre'].pristine">Pristine (n'a pas été touché UI)</p>
+  <p *ngIf="form.controls['titre'].dirty">Dirty (a été touché UI)</p>
+  <p *ngIf="form.controls['titre'].touched">Touched (a pas été touché et perte de focus)</p>
+  <p *ngIf="form.controls['titre'].untouched">Untouched (n'a pas été touché et perte de focus)</p>
+  <p *ngIf="form.controls['titre'].valid">Valid (est valide)</p>
+  <p *ngIf="form.controls['titre'].invalid">Invalid (n'est pas valide)</p>
+
 
 </form>
