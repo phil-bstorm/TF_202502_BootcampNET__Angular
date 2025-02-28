@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DemoComponent} from './demo.component';
-import {HelloWorldComponent} from './components/hello-world/hello-world.component';
-import {BindingComponent} from './binding/binding.component';
-import {DirectiveComponent} from './directive/directive.component';
-import {InputOutputComponent} from './input-output/input-output.component';
+import { HelloWorldComponent } from './components/hello-world/hello-world.component';
+import { DemoComponent } from './demo.component';
 
 const routes: Routes = [
   {
@@ -32,12 +29,16 @@ const routes: Routes = [
     loadChildren: () => import('./service/service.module').then(m => m.ServiceModule)
   },
   {
-    path : 'formulaire',
-    loadChildren : () => import('./formulaire/formulaire.module').then(m => m.FormulaireModule)
+    path: 'formulaire',
+    loadChildren: () => import('./formulaire/formulaire.module').then(m => m.FormulaireModule)
   },
   {
-    path : 'routing',
-    loadChildren : () => import('./routing/routing.module').then(m => m.RoutingModule),
+    path: 'routing',
+    loadChildren: () => import('./routing/routing.module').then(m => m.RoutingModule),
+  },
+  {
+    path: 'observables',
+    loadChildren: () => import('./observables/observables.module').then(m => m.ObservablesModule),
   }
 ];
 

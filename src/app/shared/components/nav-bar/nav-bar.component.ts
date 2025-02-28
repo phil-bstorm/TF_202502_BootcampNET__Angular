@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {Link} from './models/Link.model';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Link } from './models/Link.model';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +8,8 @@ import {Link} from './models/Link.model';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
+
   links: Link[] = [
     {
       title: 'Home',
@@ -50,14 +52,19 @@ export class NavBarComponent {
           isVisible: true
         },
         {
-          title : 'Formulaires',
-          url : '/demo/formulaire',
-          isVisible : true
+          title: 'Formulaires',
+          url: '/demo/formulaire',
+          isVisible: true
         },
         {
-          title : "Routing",
-          url : "/demo/routing",
-          isVisible : true
+          title: "Routing",
+          url: "/demo/routing",
+          isVisible: true
+        },
+        {
+          title: 'Observables',
+          url: '/demo/observables',
+          isVisible: true
         }
       ],
       isVisible: true
@@ -81,17 +88,30 @@ export class NavBarComponent {
           isVisible: true
         },
         {
-          title : "Formulaire",
-          url : "/exo/formulaire",
-          isVisible : true
+          title: "Formulaire",
+          url: "/exo/formulaire",
+          isVisible: true
         },
         {
-          title : "CRUD",
-          url : "/exo/crud",
-          isVisible : true
+          title: "CRUD",
+          url: "/exo/crud",
+          isVisible: true
         }
       ],
       isVisible: true
     }
-  ]
+  ];
+
+  isConnected: boolean = false;
+
+  constructor (private _authService: AuthService) { }
+
+  ngOnInit (): void {
+    // Subject
+    // this.isConnected = this._authService.isConnected;
+    // this._authService.authSubject$.subscribe((value) => this.isConnected = value)
+    
+    // BehaviorSubject
+    this._authService.authBehaviorSubject$.subscribe((value) => this.isConnected = value)
+  }
 }
