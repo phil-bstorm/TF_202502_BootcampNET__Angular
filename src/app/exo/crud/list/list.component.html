@@ -3,7 +3,12 @@
 <ul>
   @for (item of users; track $index)
   {
-    <li>{{item.id}} - {{item.name}} - {{item.birthdate}} - {{item.series.join(", ")}}</li>
+    <li>
+      {{item.id}} - {{item.name}} - {{item.birthdate | date}} - {{item.series.join(", ")}}
+      <button (click)="toDetails(item.id)">🔍</button>
+      <button (click)="toUpdate(item.id)">📝</button>
+      <button (click)="toRemove(item.id)">💩</button>
+    </li>
   }
 </ul>
 

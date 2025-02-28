@@ -1,1 +1,23 @@
-<p>update works!</p>
+<button appBack>Revenir en arrière</button>
+
+<form [formGroup]="form">
+
+    <label for="name">Nom</label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="bd">Date naissance</label>
+    <input id="bd" type="date" formControlName="birthdate">
+  
+    <div formArrayName="series">
+      @for (item of getArray().controls; track $index)
+      {
+        {{$index + 1}} <input type="text" [formControlName]="$index">
+        <button (click)="removeToArray($index)">Delete</button>
+      }
+    </div>
+  
+    <button (click)="addToArray()">Add</button>
+  </form>
+  
+  <button (click)="submit()">Submit</button>
+  

@@ -1,1 +1,13 @@
-<p>detail works!</p>
+<button appBack>Revenir en arrière</button>
+
+@if (user){
+
+<h2>Détails de {{user.name}}</h2>
+<p>Date de naissance: {{ user.birthdate | date : 'dd MMMM YYYY' }}</p>
+
+<ul>
+@for (serie of user.series; track $index) {
+    <li>{{ serie }}</li>
+}
+</ul>
+}

@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { CrudRoutingModule } from './crud-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
 import { CreateComponent } from './create/create.component';
-import { ListComponent } from './list/list.component';
+import { CrudRoutingModule } from './crud-routing.module';
 import { DetailComponent } from './detail/detail.component';
+import { ListComponent } from './list/list.component';
 import { UpdateComponent } from './update/update.component';
 
 // Mettre en place un CRUD de fan de série.
@@ -28,7 +29,8 @@ import { UpdateComponent } from './update/update.component';
   imports: [
     CommonModule,
     CrudRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ]
 })
 export class CrudModule { }

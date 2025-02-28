@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,12 +7,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './routing.component.html',
   styleUrl: './routing.component.scss'
 })
-export class RoutingComponent {
+export class RoutingComponent implements OnInit {
 
-  constructor(private _router : Router) {
+  constructor (private _router: Router, private _activatedRoute: ActivatedRoute) { }
+
+  ngOnInit (): void {
+    console.log("Activated Route:", this._activatedRoute);
   }
 
-  routerRedirection(){
-    this._router.navigate(["exo","formulaire"])
+  routerRedirection () {
+    this._router.navigate(["exo", "formulaire"]);
   }
 }

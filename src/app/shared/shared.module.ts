@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import {RouterLink} from '@angular/router';
+import { BackDirective } from './directives/back.directive';
 import { TimePipe } from './pipes/time.pipe';
 
 
@@ -9,7 +10,8 @@ import { TimePipe } from './pipes/time.pipe';
 @NgModule({
   declarations: [
     NavBarComponent,
-    TimePipe
+    TimePipe,
+    BackDirective
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { TimePipe } from './pipes/time.pipe';
   ],
   exports: [
     NavBarComponent,
-    TimePipe
+    TimePipe,
+    BackDirective,
   ]
 })
 export class SharedModule { }
