@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path: 'observables',
     loadChildren: () => import('./observables/observables.module').then(m => m.ObservablesModule),
+  },
+  {
+    path: 'http-client',
+    loadChildren: () => import("./http/http.module").then(m => m.HttpModule),
   }
 ];
 

@@ -1,0 +1,14 @@
+<button appBack>Revenir en arrière</button>
+
+@if (voiture) {
+
+<h1>Détails de la voiture</h1>
+
+<p>Id: {{ voiture.id }}</p>
+<p>Marque: {{ voiture.marque }}</p>
+<p>Modèle: {{ voiture.modele }}</p>
+
+}
+@else {
+    <h1>Id non reconnu</h1>
+}

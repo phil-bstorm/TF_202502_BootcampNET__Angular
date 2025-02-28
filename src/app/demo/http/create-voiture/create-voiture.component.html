@@ -1,0 +1,29 @@
+<button appBack>Revenir en arrière</button>
+
+<h1>Création d'une voiture</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="marque">Marque:</label>
+        <input type="text" id="marque" formControlName="marque">
+    </div>
+
+    <div>
+        <label for="modele">Modele:</label>
+        <input type="text" id="modele" formControlName="modele">
+    </div>
+
+    <div>
+        <label for="prix">Prix:</label>
+        <input type="number" id="prix" formControlName="prix">
+    </div>
+
+    <div>
+        <label for="couleur">Couleur:</label>
+        <input type="text" id="couleur" formControlName="couleur">
+    </div>
+
+    <button>Créer</button>
+
+</form>

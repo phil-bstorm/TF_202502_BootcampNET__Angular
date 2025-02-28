@@ -1,0 +1,32 @@
+<button (click)="toCreate()">Créer une nouvelle voiture</button>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Marque</th>
+        <th>Modèle</th>
+        <th>Détails</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+
+    @if (voitures) {
+
+    @for (voiture of voitures; track $index) {
+    <tr>
+        <td>{{voiture.id}}</td>
+        <td>{{voiture.marque}}</td>
+        <td>{{voiture.modele}}</td>
+        <td><button (click)="toDetails(voiture.id)">🔍</button></td>
+        <td><button (click)="toUpdate(voiture.id)">📝</button></td>
+        <td><button (click)="toDelete(voiture.id)">💩</button></td>
+    </tr>
+    }
+
+    }
+    @else {
+    <tr>
+        <td colspan="6">Aucune voiture...</td>
+    </tr>
+    }
+</table>

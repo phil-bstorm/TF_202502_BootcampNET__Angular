@@ -65,6 +65,11 @@ export class NavBarComponent implements OnInit {
           title: 'Observables',
           url: '/demo/observables',
           isVisible: true
+        },
+        {
+          title: 'HttpClient',
+          url: '/demo/http-client',
+          isVisible: true
         }
       ],
       isVisible: true
@@ -110,8 +115,8 @@ export class NavBarComponent implements OnInit {
     // Subject
     // this.isConnected = this._authService.isConnected;
     // this._authService.authSubject$.subscribe((value) => this.isConnected = value)
-    
+
     // BehaviorSubject
-    this._authService.authBehaviorSubject$.subscribe((value) => this.isConnected = value)
+    this._authService.authBehaviorSubject$.subscribe((value) => this.isConnected = value);
   }
 }
