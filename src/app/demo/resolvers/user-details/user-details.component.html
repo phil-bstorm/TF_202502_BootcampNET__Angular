@@ -1,0 +1,13 @@
+<button appBack>Revenir en arrière</button>
+
+@if (user){
+<h2>Détails d'un user</h2>
+
+<p>Id: {{ user.id }}</p>
+<p>Nom: {{ user.lastname }}</p>
+<p>Prénom: {{ user.firstname }}</p>
+
+}
+@else {
+    <p>Utilisateur non reconnu.</p>
+}

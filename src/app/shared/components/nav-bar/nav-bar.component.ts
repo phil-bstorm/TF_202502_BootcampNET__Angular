@@ -70,6 +70,11 @@ export class NavBarComponent implements OnInit {
           title: 'HttpClient',
           url: '/demo/http-client',
           isVisible: true
+        }, 
+        {
+          title: 'Resolvers',
+          url: '/demo/resolvers',
+          isVisible: true
         }
       ],
       isVisible: true

@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path: 'http-client',
     loadChildren: () => import("./http/http.module").then(m => m.HttpModule),
+  },
+  {
+    path: 'resolvers',
+    loadChildren: () => import("./resolvers/resolvers.module").then(m => m.ResolversModule),
   }
 ];
 

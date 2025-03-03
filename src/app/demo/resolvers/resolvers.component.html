@@ -1,0 +1,28 @@
+<h1>Démonstration sur les resolvers</h1>
+
+@if(users) {
+
+<table>
+
+    <tr>
+        <th>Nom</th>
+        <th>Détails</th>
+    </tr>
+
+    @for (user of users; track $index) {
+
+    <tr>
+        <td>{{ user.lastname }}</td>
+        <td><button (click)="navigateToDetails(user.id)">🔍</button></td>
+    </tr>
+
+    }
+
+    <tr>
+        <td>Unknow</td>
+        <td><button (click)="navigateToDetails(0)">🔍</button></td>
+    </tr>
+
+</table>
+
+}
