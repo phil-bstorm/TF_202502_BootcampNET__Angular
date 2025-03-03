@@ -11,3 +11,17 @@ p {
 .textVert {
   color: green;
 }
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+form div > * {
+  display: block;
+  margin: 10px 0;
+}

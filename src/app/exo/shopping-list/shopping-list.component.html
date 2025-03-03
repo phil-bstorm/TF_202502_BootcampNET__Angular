@@ -1,0 +1,43 @@
+<h1>Shopping List</h1>
+
+<menu>
+    <ul>
+        <li>
+            <a routerLink="/exo/shopping-list/create">Ajout d'un produit</a>
+        </li>
+    </ul>
+</menu>
+
+<hr>
+
+@if(products) {
+
+<table>
+    <thead>
+        <tr>
+            <th>Selectionné</th>
+            <th>Nom</th>
+            <th>Quantité</th>
+            <th>Détails</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of products; track $index) {
+
+        <tr>
+            <td><input type="checkbox" [checked]="product.selected" (change)="onChangeSelected(product.id, $event)"></td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td><button (click)="toDetails(product.id)">🔍</button></td>
+            <td><button (click)="toDelete(product.id)">❌</button></td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+}
+@else {
+
+}

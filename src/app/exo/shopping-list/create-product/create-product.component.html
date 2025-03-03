@@ -1,0 +1,41 @@
+<h2>Création d'un produit:</h2>
+
+<button appBack>Revenir en arrière</button>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+    </div>
+
+    <div>
+        <label for="price">Prix:</label>
+        <input type="number" id="price" formControlName="price" />
+    </div>
+
+    <div>
+        <label for="quantity">Quantité:</label>
+        <input type="number" id="quantity" formControlName="quantity" />
+    </div>
+
+    @if (product) {
+
+    <div>
+        <label for="selected">Selectionné:</label>
+        <input type="checkbox" id="selected" formControlName="selected" />
+    </div>
+    
+    <button>Modifier</button>
+    }
+    @else {
+    <button>Ajouter</button>
+    }
+
+
+</form>

@@ -1,0 +1,19 @@
+<button appBack>Revenir en arrière</button>
+
+<h2>Détails du produit</h2>
+
+<button (click)="toUpdate(product.id)">Modifier</button>
+
+@if (product) {
+
+<p>id: {{product.id}}</p>
+<p>name: {{product.name}}</p>
+<p>description: {{product.description}}</p>
+<p>price: {{product.price}}</p>
+<p>quantity: {{product.quantity}}</p>
+<p>selected: {{product.selected}}</p>
+
+}
+@else {
+<p>Aucun produit trouvé</p>
+}

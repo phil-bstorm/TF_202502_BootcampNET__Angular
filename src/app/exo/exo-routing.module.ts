@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ExoComponent} from './exo.component';
-import {ChronometreComponent} from './chronometre/chronometre.component';
-import {ShoppingComponent} from './shopping/shopping.component';
-import {ShoppingServiceComponent} from './shopping-service/shopping-service.component';
+import { ChronometreComponent } from './chronometre/chronometre.component';
+import { ExoComponent } from './exo.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { ShoppingServiceComponent } from './shopping-service/shopping-service.component';
+import { ShoppingComponent } from './shopping/shopping.component';
 
 const routes: Routes = [
   {
@@ -24,12 +24,16 @@ const routes: Routes = [
     component: ShoppingServiceComponent
   },
   {
-    path : 'formulaire',
-    component : FormulaireComponent
+    path: 'formulaire',
+    component: FormulaireComponent
   },
   {
     path: "crud",
-    loadChildren : () => import("./crud/crud.module").then(m => m.CrudModule)
+    loadChildren: () => import("./crud/crud.module").then(m => m.CrudModule)
+  },
+  {
+    path: 'shopping-list',
+    loadChildren: () => import("./shopping-list/shopping-list.module").then(m => m.ShoppingListModule)
   }
 ];
 

@@ -14,5 +14,23 @@
       "couleur": "Rouge",
       "id": "aa0e"
     }
+  ],
+  "products": [
+    {
+      "id": "5166",
+      "name": "Twix",
+      "description": "Miam",
+      "quantity": 3,
+      "price": 1.2,
+      "selected": true
+    },
+    {
+      "name": "Eau minérale",
+      "description": "Glouglouglou",
+      "quantity": 1,
+      "price": 1.4,
+      "id": "d8ee",
+      "selected": false
+    }
   ]
 }

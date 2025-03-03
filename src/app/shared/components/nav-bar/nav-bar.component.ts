@@ -106,6 +106,11 @@ export class NavBarComponent implements OnInit {
           title: "CRUD",
           url: "/exo/crud",
           isVisible: true
+        },
+        {
+          title: 'Shopping List (Observables)',
+          url: '/exo/shopping-list',
+          isVisible: true
         }
       ],
       isVisible: true
