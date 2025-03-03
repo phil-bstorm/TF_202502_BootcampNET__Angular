@@ -7,7 +7,7 @@ import { Voiture, VoitureDTO } from '../models/voiture.model';
   providedIn: 'root'
 })
 export class VoitureService {
-  
+
 
   private readonly _voitureEndPoint: string = `http://localhost:3000/voitures`;
 
@@ -18,19 +18,24 @@ export class VoitureService {
     return this._httpClient.get<Voiture[]>(this._voitureEndPoint);
   }
 
-  getById (id: number): Observable<Voiture> {
+  getById (id: string): Observable<Voiture> {
     return this._httpClient.get<Voiture>(`${this._voitureEndPoint}/${id}`);
   }
 
-  update (id: number, voiture: Voiture): Observable<Voiture> {
+  update (id: string, voiture: Voiture): Observable<Voiture> {
     return this._httpClient.put<Voiture>(`${this._voitureEndPoint}/${id}`, voiture);
   }
 
-  delete (id: number): Observable<void> {
-    return this._httpClient.delete<void>(`${this._voitureEndPoint}/${id}`)
+  delete (id: string): Observable<void> {
+    return this._httpClient.delete<void>(`${this._voitureEndPoint}/${id}`);
   }
 
-  create (voiture: VoitureDTO): Observable<void> {
-    return this._httpClient.post<void>(this._voitureEndPoint, voiture)
+  create (voiture: VoitureDTO): Observable<Voiture> {
+    return this._httpClient.post<Voiture>(this._voitureEndPoint, voiture);
   }
+
+  patch (id: string, values: Partial<Voiture>): Observable<Voiture> {
+    return this._httpClient.patch<Voiture>(`${this._voitureEndPoint}/${id}`, values)
+  }
+
 }

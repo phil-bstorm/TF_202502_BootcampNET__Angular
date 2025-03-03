@@ -18,7 +18,10 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit (): void {
     const id = this._activatedRoute.snapshot.params['id'];
-    this._voitureService.getById(+id).subscribe(data => this.voiture = data)
+    this._voitureService.getById(id).subscribe({
+      next: data => this.voiture = data,
+      error: (error) => console.log("Erreur: ", error)
+    });
   }
 
 }

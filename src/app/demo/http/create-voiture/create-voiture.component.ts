@@ -37,7 +37,11 @@ export class CreateVoitureComponent {
       console.log("Mise à jour des données");
   
       this._voitureService.create(this.form.value)
-        .subscribe(() => this._router.navigate(['demo', 'http-client']));
+        .subscribe({
+          next: () => this._router.navigate(['demo', 'http-client']),
+          error: (error) => {},
+          complete: () => {}
+        });
     }
 
 }

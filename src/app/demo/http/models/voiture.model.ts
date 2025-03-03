@@ -1,5 +1,5 @@
 export interface Voiture {
-    id: number;
+    id: string;
     marque: string;
     modele: string;
     prix: number;

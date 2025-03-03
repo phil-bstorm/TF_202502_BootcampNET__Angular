@@ -23,7 +23,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit (): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.user = this.crudService.getUserById(+id);
+    this.user = this.crudService.getUserById(id);
 
     console.log(this.user);
 

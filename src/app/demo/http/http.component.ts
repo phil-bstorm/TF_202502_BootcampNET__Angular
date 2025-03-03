@@ -24,15 +24,15 @@ export class HttpComponent implements OnInit {
     });
   }
 
-  toDetails (id: number) {
+  toDetails (id: string) {
     this._router.navigate(['demo', 'http-client', id]);
   }
 
-  toUpdate (id: number) {
+  toUpdate (id: string) {
     this._router.navigate(['demo', 'http-client', 'update', id]);
   }
 
-  toDelete (id: number) {
+  toDelete (id: string) {
     if (!confirm("Voulez-vous supprimer la voiture ?")) return;
 
     this._voitureService.delete(id)

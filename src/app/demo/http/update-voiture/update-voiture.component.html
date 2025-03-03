@@ -7,6 +7,7 @@
     <div>
         <label for="marque">Marque:</label>
         <input type="text" id="marque" formControlName="marque">
+        <button type="button" (click)="onPatchMarque()">Modifier marque</button>
     </div>
 
     <div>
@@ -23,6 +24,8 @@
         <label for="couleur">Couleur:</label>
         <input type="text" id="couleur" formControlName="couleur">
     </div>
+
+    <button type="button" (click)="onPatchPrixCouleur()">Modifier prix et couleur</button>
 
     <button>Modifier</button>
 
