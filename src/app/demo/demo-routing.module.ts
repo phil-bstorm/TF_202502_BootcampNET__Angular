@@ -47,6 +47,10 @@ const routes: Routes = [
   {
     path: 'resolvers',
     loadChildren: () => import("./resolvers/resolvers.module").then(m => m.ResolversModule),
+  },
+  {
+    path: 'interceptors',
+    loadChildren: () => import("./interceptors/interceptors.module").then(m => m.InterceptorsModule),
   }
 ];
 
